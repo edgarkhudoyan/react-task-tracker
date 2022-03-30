@@ -1,4 +1,5 @@
 import { useState, createContext } from "react";
+import uuid from "react-uuid";
 
 export const TaskContext = createContext();
 
@@ -8,7 +9,7 @@ export const TaskProvider = ({ children }) => {
       title: "Learn JS",
       description: "var vs let/const",
       priority: "medium",
-      id: 1,
+      id: uuid(),
       category: "JS",
       status: "todo",
     },
@@ -16,7 +17,7 @@ export const TaskProvider = ({ children }) => {
       title: "Learn JS",
       description: "Promises, async/await",
       priority: "high",
-      id: 2,
+      id: uuid(),
       category: "JS",
       status: "todo",
     },
@@ -24,7 +25,7 @@ export const TaskProvider = ({ children }) => {
       title: "Learn JS",
       description: "Functional Programming in JS",
       priority: "high",
-      id: 3,
+      id: uuid(),
       category: "JS",
       status: "doing",
     },
@@ -32,7 +33,7 @@ export const TaskProvider = ({ children }) => {
       title: "Learn JS",
       description: "Data types",
       priority: "high",
-      id: 4,
+      id: uuid(),
       category: "JS",
       status: "done",
     },

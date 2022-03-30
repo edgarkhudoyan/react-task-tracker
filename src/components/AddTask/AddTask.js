@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { TaskContext } from "../../TaskContext";
 import { useStyles } from "./styles";
+import uuid from "react-uuid";
 
 const AddTask = () => {
   const styles = useStyles();
@@ -28,9 +29,10 @@ const AddTask = () => {
       {
         title,
         description,
-        status: "todo",
         priority,
+        id: uuid(),
         category: "JS",
+        status: "todo",
       },
     ]);
     setTitle("");

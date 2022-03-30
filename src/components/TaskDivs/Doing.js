@@ -10,7 +10,7 @@ const Doing = () => {
       <h2>Doing</h2>
       {tasks.map((task) =>
         task.status === "doing" ? (
-          <div className={styles.task}>
+          <div key={task.id} className={styles.task}>
             <h3> {task.title}</h3>
             <p> {task.description}</p>
             <div>
