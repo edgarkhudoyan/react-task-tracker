@@ -5,7 +5,16 @@ import AddTask from "../components/AddTask/AddTask";
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
+  tasksContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    padding: "3em",
+  },
+
   tasks: {
+    width: "100%",
     display: "flex",
     justifyContent: "space-around",
     alignItems: "flex-start",
@@ -17,12 +26,14 @@ const TaskLists = () => {
   const styles = useStyles();
 
   return (
-    <div>
+    <div className={styles.tasksContainer}>
+      <div>
+        <AddTask />
+      </div>
       <div className={styles.tasks}>
         <Todo />
         <Doing />
         <Done />
-        <AddTask />
       </div>
     </div>
   );

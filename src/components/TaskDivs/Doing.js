@@ -11,8 +11,13 @@ const Doing = () => {
       {tasks.map((task) =>
         task.status === "doing" ? (
           <div className={styles.task}>
-            <div> {task.title}</div>
-            <div> {task.description}</div>
+            <h3> {task.title}</h3>
+            <p> {task.description}</p>
+            <div>
+              <button>Set as Todo</button>
+              <button>Delete</button>
+              <button>Set as Done</button>
+            </div>
           </div>
         ) : (
           ""
