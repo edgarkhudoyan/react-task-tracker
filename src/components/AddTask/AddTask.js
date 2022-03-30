@@ -66,14 +66,21 @@ const AddTask = () => {
               onChange={updateDesc}
             />
 
-            <input
-              className={styles.input}
-              type="text"
-              placeholder="Priority"
+            <select
+              required
+              className={styles.status}
               name="priority"
               value={priority}
               onChange={updatePriority}
-            />
+            >
+              <option value="" selected disabled hidden>
+                Status
+              </option>
+
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
             <button className={styles.addTodo} type="submit">
               Add Todo
             </button>

@@ -45,4 +45,14 @@ export const useStyles = createUseStyles({
       outline: "none",
     },
   },
+  status: {
+    border: "1px solid #333",
+    borderRadius: "5px",
+    margin: "1em 1.5em 1em 0.5em",
+    padding: "1em",
+    background: "transparent",
+    "&:focus": {
+      outline: "none",
+    },
+  },
 });
