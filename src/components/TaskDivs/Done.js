@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { TaskContext } from "../../TaskContext";
 import { useStyles } from "./styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Done = () => {
   const styles = useStyles();
@@ -13,10 +15,10 @@ const Done = () => {
           <div key={task.id} className={styles.task}>
             <h3> {task.title}</h3>
             <p> {task.description}</p>
-            <div>
-              <button>Set as Todo</button>
-              <button>Delete</button>
-              <button>Set as Done</button>
+            <div className={styles.buttons}>
+              <button className={styles.delete}>
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
             </div>
           </div>
         ) : (
