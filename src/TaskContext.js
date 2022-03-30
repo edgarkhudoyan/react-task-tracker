@@ -22,7 +22,7 @@ export const TaskProvider = ({ children }) => {
     },
     {
       title: "Learn JS",
-      description: "Functional JS",
+      description: "Functional Programming in JS",
       priority: "high",
       id: 3,
       category: "JS",
