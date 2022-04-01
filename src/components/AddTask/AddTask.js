@@ -76,7 +76,7 @@ const AddTask = () => {
               onChange={updatePriority}
             >
               <option value="" selected disabled hidden>
-                Status
+                Priority
               </option>
 
               <option value="low">Low</option>

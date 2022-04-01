@@ -8,7 +8,7 @@ export const TaskProvider = ({ children }) => {
     {
       title: "Learn JS",
       description: "var vs let/const",
-      priority: "medium",
+      priority: "low",
       id: uuid(),
       category: "JS",
       status: "todo",

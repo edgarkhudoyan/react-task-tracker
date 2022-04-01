@@ -22,6 +22,36 @@ export const useStyles = createUseStyles({
     alignItems: "center",
   },
 
+  priorityLow: {
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    fontSize: "0.7rem",
+    backgroundColor: "green",
+    color: "#fff",
+    padding: "0.2rem",
+    borderRadius: "5px",
+  },
+
+  priorityMedium: {
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    fontSize: "0.7rem",
+    backgroundColor: "orange",
+    color: "#fff",
+    padding: "0.2rem",
+    borderRadius: "5px",
+  },
+
+  priorityHigh: {
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    fontSize: "0.7rem",
+    backgroundColor: "red",
+    color: "#fff",
+    padding: "0.2rem",
+    borderRadius: "5px",
+  },
+
   doing: {
     border: "1px solid #333",
     borderRadius: "5px",

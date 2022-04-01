@@ -31,9 +31,9 @@ const TaskLists = () => {
         <AddTask />
       </div>
       <div className={styles.tasks}>
-        <Todo />
-        <Doing />
-        <Done />
+        <Todo status="todo" />
+        <Doing status="doing" />
+        <Done status="done" />
       </div>
     </div>
   );
