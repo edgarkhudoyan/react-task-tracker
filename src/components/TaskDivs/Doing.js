@@ -4,14 +4,27 @@ import { useStyles } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const Doing = ({ status }) => {
+const Doing = () => {
   const styles = useStyles();
   const [tasks, setTasks] = useContext(TaskContext);
+
+  const setDoneHandler = (e) => {
+    tasks.map((task) => {
+      if (task.id === e.target.id) {
+        return setTasks([...tasks, (task.status = "done")]);
+      }
+    });
+  };
+
+  const deleteTask = (e) => {
+    setTasks(tasks.filter((task) => task.id !== e.target.id));
+  };
+
   return (
     <div className={styles.tasks}>
       <h2>Doing</h2>
       {tasks.map((task) =>
-        task.status === status ? (
+        task.status === "doing" ? (
           <div key={task.id} className={styles.task}>
             <span
               className={
@@ -31,10 +44,20 @@ const Doing = ({ status }) => {
               <p> {task.description}</p>
             </div>
             <div className={styles.buttons}>
-              <button className={styles.delete}>
-                <FontAwesomeIcon icon={faTrash} />
+              <button
+                id={task.id}
+                onClick={deleteTask}
+                className={styles.delete}
+              >
+                Delete
               </button>
-              <button className={styles.done}>Done</button>
+              <button
+                id={task.id}
+                className={styles.done}
+                onClick={setDoneHandler}
+              >
+                Done
+              </button>
             </div>
           </div>
         ) : (

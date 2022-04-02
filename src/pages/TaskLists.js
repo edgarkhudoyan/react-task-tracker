@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { TaskContext } from "../TaskContext";
 import Todo from "../components/TaskDivs/Todo";
 import Doing from "../components/TaskDivs/Doing";
 import Done from "../components/TaskDivs/Done";
@@ -23,6 +25,8 @@ const useStyles = createUseStyles({
 });
 
 const TaskLists = () => {
+  const [tasks, setTasks] = useContext(TaskContext);
+
   const styles = useStyles();
 
   return (
@@ -31,9 +35,9 @@ const TaskLists = () => {
         <AddTask />
       </div>
       <div className={styles.tasks}>
-        <Todo status="todo" />
-        <Doing status="doing" />
-        <Done status="done" />
+        <Todo />
+        <Doing />
+        <Done />
       </div>
     </div>
   );
