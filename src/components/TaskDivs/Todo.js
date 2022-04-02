@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { TaskContext } from "../../TaskContext";
 import { useStyles } from "./styles";
+import { Link } from "react-router-dom";
 
 const Todo = () => {
   const styles = useStyles();
@@ -31,24 +32,28 @@ const Todo = () => {
       <h2>To Do</h2>
       {tasks.map((task) =>
         task.status === "todo" ? (
-          <div key={task.id} className={styles.task}>
-            <span
-              className={
-                task.priority === "low"
-                  ? styles.priorityLow
-                  : task.priority === "medium"
-                  ? styles.priorityMedium
-                  : task.priority === "high"
-                  ? styles.priorityHigh
-                  : ""
-              }
-            >
-              {task.priority}
-            </span>
-            <div>
-              <h3> {task.title}</h3>
-              <p> {task.description}</p>
-            </div>
+          <div>
+            <Link className={styles.link} to="/boards/js/:id">
+              <div key={task.id} className={styles.task}>
+                <span
+                  className={
+                    task.priority === "low"
+                      ? styles.priorityLow
+                      : task.priority === "medium"
+                      ? styles.priorityMedium
+                      : task.priority === "high"
+                      ? styles.priorityHigh
+                      : ""
+                  }
+                >
+                  {task.priority}
+                </span>
+                <div>
+                  <h3> {task.title}</h3>
+                  <p> {task.description}</p>
+                </div>
+              </div>
+            </Link>
             <div className={styles.buttons}>
               <button
                 id={task.id}

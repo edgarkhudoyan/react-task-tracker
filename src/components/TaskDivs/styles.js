@@ -16,6 +16,11 @@ export const useStyles = createUseStyles({
     borderRadius: "10px",
   },
 
+  link: {
+    textDecoration: "none",
+    color: "#333",
+  },
+
   buttons: {
     display: "flex",
     justifyContent: "space-around",

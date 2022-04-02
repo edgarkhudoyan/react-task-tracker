@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { TaskContext } from "../../TaskContext";
 import { useStyles } from "./styles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Done = () => {
   const styles = useStyles();
@@ -17,24 +16,28 @@ const Done = () => {
       <h2>Done</h2>
       {tasks.map((task) =>
         task.status === "done" ? (
-          <div key={task.id} className={styles.task}>
-            <span
-              className={
-                task.priority === "low"
-                  ? styles.priorityLow
-                  : task.priority === "medium"
-                  ? styles.priorityMedium
-                  : task.priority === "high"
-                  ? styles.priorityHigh
-                  : ""
-              }
-            >
-              {task.priority}
-            </span>
-            <div>
-              <h3> {task.title}</h3>
-              <p> {task.description}</p>
-            </div>
+          <div>
+            <Link to="/boards/js/:id" className={styles.link}>
+              <div key={task.id} className={styles.task}>
+                <span
+                  className={
+                    task.priority === "low"
+                      ? styles.priorityLow
+                      : task.priority === "medium"
+                      ? styles.priorityMedium
+                      : task.priority === "high"
+                      ? styles.priorityHigh
+                      : ""
+                  }
+                >
+                  {task.priority}
+                </span>
+                <div>
+                  <h3> {task.title}</h3>
+                  <p> {task.description}</p>
+                </div>
+              </div>
+            </Link>
             <div className={styles.buttons}>
               <button
                 id={task.id}
